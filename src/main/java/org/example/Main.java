@@ -2,24 +2,31 @@ package org.example;
 
 import processing.core.PApplet;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.ArrayList;
+
 public class Main extends PApplet {
 
     public static final int WIDTH = 640;
     public static final int HEIGHT = 480;
 
-    int start = 0;
+    int noOFBalls = 4;
+    ArrayList<Ball> balls = new ArrayList<>();
     public static void main(String[] args) {
         PApplet.main("org.example.Main",args);}
 
     @Override
+    public void setup() {
+        for(int i = 1;i<=noOFBalls;i++){
+            balls.add(new Ball(i,HEIGHT*i/5));
+        }
+    }
+
+    @Override
     public void draw() {
-        ellipse(start,HEIGHT/5,10,10);
-        ellipse(start*2,HEIGHT*2/5,10,10);
-        ellipse(start*3,HEIGHT*3/5,10,10);
-        ellipse(start*4,HEIGHT*4/5,10,10);
-        start++;
+      for(int i = 0;i<noOFBalls;i++){
+          Ball ithBall = balls.get(i);
+          ithBall.move(this);
+      }
     }
 
     @Override
