@@ -17,6 +17,10 @@ public class Ball extends PApplet {
 
     public void move(PApplet Board){
         Board.ellipse(start,height, DIAMETER,DIAMETER);
+        startIncrementer();
+    }
+
+    private void startIncrementer() {
         start=start+factor;
     }
 }
