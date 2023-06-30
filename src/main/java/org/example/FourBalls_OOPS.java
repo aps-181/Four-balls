@@ -4,7 +4,7 @@ import processing.core.PApplet;
 
 import java.util.ArrayList;
 
-public class Main extends PApplet {
+public class FourBalls_OOPS extends PApplet {
 
     public static final int WIDTH = 640;
     public static final int HEIGHT = 480;
@@ -12,7 +12,7 @@ public class Main extends PApplet {
     int noOFBalls = 4;
     ArrayList<Ball> balls = new ArrayList<>();
     public static void main(String[] args) {
-        PApplet.main("org.example.Main",args);}
+        PApplet.main("org.example.FourBalls_OOPS",args);}
 
     @Override
     public void setup() {
